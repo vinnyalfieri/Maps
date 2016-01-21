@@ -1,0 +1,7 @@
+Awesome Shit App.
+
+Shows bathrooms for the City of Paris
+
+
+Thanks to Paris Open Data for the data.
+http://opendata.paris.fr/

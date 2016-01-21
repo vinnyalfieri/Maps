@@ -1,0 +1,34 @@
+<div class="city-container" id="<%= @city.id %>">
+<h1><%= @city.name %></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div id="map-container">
+      <div id="map-canvas"> 
+      <script type="text/javascript">
+      
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
+    center: {lat: gon.city.lat, lng: gon.city.long},
+    zoom: 5
+  });
+  for (var i = 0; i < gon.toilets.length; i++) {
+    var myLatLng = {lat: gon.toilets[i].lat, lng: gon.toilets[i].long};
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: 'Toilet'
+    });
+  };
+}
+
+
+      </script>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['googe_maps_key'] %>&callback=initMap" async defer></script>
